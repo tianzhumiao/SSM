@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http//mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--懒加载器-->
+    <settings>
+        <!--二级缓存-->
+        <setting name="cacheEnabled" value="true"/>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+    <!--类型的别名-->
+    <typeAliases>
+        <package name="net.wanho.pojo"/>
+    </typeAliases>
+    <!--分页插件 5.0以下-->
+    <!--<plugins>
+        <plugin interceptor="com.github.pagehelper">
+            <property name="dialect" value="mysql"/>
+        </plugin>
+    </plugins>-->
+    <!--分页插件 5.0及以上版本-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+
+</configuration>
